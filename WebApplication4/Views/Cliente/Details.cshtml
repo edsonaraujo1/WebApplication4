@@ -1,0 +1,59 @@
+@model WebApplication4.Models.Cliente
+
+@{
+  ViewData["Title"] = "Details";
+
+  var visao = ViewData["Clie_Ente"];
+
+  ViewBag.Cardstring = ViewData["Clie_Ente"];
+}
+<div>
+  <h4>Cadastro de Clientes</h4>
+  <hr />
+  <dl class="row">
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Nome)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Nome)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Cpf)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Cpf)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Contrato)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Contrato)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Data)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Data)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Valor_principal)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Valor_principal)
+    </dd>
+  </dl>
+</div>
+<div>
+
+  @Html.Raw(ViewData["Clie_Botao"])
+
+</div>
+<div>
+
+  <h4>Pagamentos</h4>
+  <hr />
+
+  @Html.Raw(ViewBag.Cardstring)
+</div>
+
+

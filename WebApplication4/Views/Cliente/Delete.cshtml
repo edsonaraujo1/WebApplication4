@@ -1,0 +1,53 @@
+@model WebApplication4.Models.Cliente
+
+@{
+  ViewData["Title"] = "Delete";
+}
+
+<h1>Cadastro de Cliente</h1>
+
+<h3 style="color:#ff0000">Tem certeza de que deseja excluir isso?</h3>
+<div>
+  <h4>Pagamento</h4>
+  <hr />
+  <dl class="row">
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.IdCli)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.IdCli)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Nome)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Nome)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Cpf)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Cpf)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Data)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Data)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Valor_principal)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Valor_principal)
+    </dd>
+  </dl>
+
+  <h4 style="color:#ff0000">Antes de Excluir Cliente verifique se o mesmo existe pagamentos em aberto os mesmo serão excluídos</h4>
+
+  <form asp-action="Delete">
+    <input type="hidden" asp-for="IdCli" />
+    <input type="submit" value="Deletar" class="btn btn-danger" /> |
+    <a href="javascript:history.back()" class="btn btn-outline-dark">Cancelar</a>
+  </form>
+</div>

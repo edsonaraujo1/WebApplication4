@@ -1,0 +1,77 @@
+@model IEnumerable<WebApplication4.Models.Cliente>
+
+@{
+  ViewData["Title"] = "Index";
+}
+
+  <h3>Lista de Clientes</h3>
+
+<p>
+  <a asp-action="Create" class='btn btn-primary btn-sm'>Incluir Novo Cliente</a>
+</p>
+<p>
+  <form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+      CPF: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Buscar..." />
+      <input type="submit" value="Pesquisar" class="btn btn-primary btn-sm" /> |
+      <a href="~/Cliente/Index" class="btn btn-outline-dark btn-sm">Voltar para Completo</a>
+      <a href="~/Cliente/ClientesPDF" class="btn btn-success btn-sm">Imprimir Lista</a>
+    </div>
+  </form>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.Nome)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Cpf)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Contrato)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Data)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Valor_principal)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Valor_atualizado)
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Contrato)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Valor_principal)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Valor_atualizado)
+        </td>
+        <td>
+          <a asp-action="Edit" asp-route-id="@item.IdCli" class='btn btn-primary btn-sm'>Alterar</a> |
+          <a asp-action="Details" asp-route-id="@item.IdCli" class='btn btn-outline-dark btn-sm'>Detalhes</a> |
+          <a asp-action="Delete" asp-route-id="@item.IdCli" class='btn btn-danger btn-sm'>Excluir</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

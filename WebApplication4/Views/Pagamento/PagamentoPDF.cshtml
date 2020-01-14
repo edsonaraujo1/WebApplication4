@@ -1,0 +1,77 @@
+@model IEnumerable<Pagamento>
+
+@{
+  ViewData["Title"] = "ContactPDF";
+}
+@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title>Grupo Aval</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="~/images/generic-logo.png" />
+    </div>
+    <div class="col-sm-8 text-left">
+      <h2>Lista Debitos/Pagamentos</h2>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Cpf
+        </th>
+        <th>
+          Contrato
+        </th>
+        <th>
+          Data
+        </th>
+        <th>
+          Valor
+        </th>
+        <th>
+          Situação
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model)
+      {
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Contrato)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Data)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Situacao)
+          </td>
+
+        </tr>
+      }
+    </tbody>
+  </table>
+
+
+</body>
+</html>
