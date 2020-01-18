@@ -6,85 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@ViewData["Title"] - Grupo Aval</title>
 
-  <environment include="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link href="~/css/jquery-ui.css" rel="stylesheet" />
-    <link href="~/css/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
-  </environment>
-  <environment exclude="Development">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-          crossorigin="anonymous"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
-  </environment>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+  <link href="~/css/jquery-ui.css" rel="stylesheet" />
+  <link href="~/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+  <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="~/css/site.css" />
-
-
-
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication4</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                  <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                      <a class="nav-link text-dark" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-dark" href="/Cliente/">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-dark" href="/api/Pagto/">API Cálculo </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-dark" href="/Home/Privacy">Privacidade</a>
-                    </li>
-                  </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
       <div class="container">
-        &copy; 2020 - Grupo Aval - Todos os direitos reservados  <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication4</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+          <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="~/Home/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="~/Cliente/">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="~/api/Pagto/">API Cálculo </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="~/Home/Privacy">Privacidade</a>
+            </li>
+          </ul>
+
+        </div>
+        <span style="text-align:right"><i class="fa fa-cloud"></i> - SQL Server (remoto) - Online</span>
       </div>
-    </footer>
+    </nav>
+  </header>
+  <div class="container">
+    <partial name="_CookieConsentPartial" />
+    <main role="main" class="pb-3">
+      @RenderBody()
+    </main>
+  </div>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-        </script>
-    </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+  <footer class="border-top footer text-muted">
+    <div class="container">
+      &copy; 2020 - Grupo Aval - Todos os direitos reservados  <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+    </div>
+  </footer>
 
-    @RenderSection("Scripts", required: false)
+  <script src="~/lib/jquery/dist/jquery.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js"></script>
+  <script src="~/lib/jquery/dist/jquery-ui.js"></script>
+  <script src="~/lib/jquery/dist/jquery.maskedinput.js"></script>
+  <script src="~/lib/jquery/dist/jquery.mask.min.js"></script>
+  <script src="~/lib/jquery/dist/examples.js"></script>
+  <script src="~/lib/jquery/dist/daterangepicker.js"></script>
+  <script src="~/lib/jquery/dist/bootstrap-datepicker.min.js"></script>
+  <script src="~/lib/jquery/dist/bootbox.min.js"></script>
+  <script src="~/lib/jquery/dist/valida_cpf_cnpj.js"></script>
+  <script src="~/lib/jquery/dist/validatecnpjcpf.js"></script>
+
+  @RenderSection("Scripts", required: false)
 </body>
 </html>

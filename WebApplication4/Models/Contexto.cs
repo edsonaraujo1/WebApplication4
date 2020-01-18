@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 
 namespace WebApplication4.Models
 {
@@ -15,7 +12,7 @@ namespace WebApplication4.Models
 
     public Contexto()
     {
-      minhaConexao = new SqlConnection("Data Source=localhost; Initial Catalog = GrupoAval; Persist Security Info = True; Uid = sa; Password = 12345; MultipleActiveResultSets = true; Min Pool Size=0; Max Pool Size=250; Connect Timeout=1800;");
+      minhaConexao = new SqlConnection("Data Source=den1.mssql8.gear.host; Initial Catalog = grupoaval; Persist Security Info = True; Uid = grupoaval; Password = Yk8Pr9q_8Zs_; MultipleActiveResultSets = true; Min Pool Size=0; Max Pool Size=250; Connect Timeout=1800;");
       try
       {
         minhaConexao.Open();

@@ -26,7 +26,7 @@ namespace WebApplication4.Controllers
     public async Task<IActionResult> Index(string sortOrder, string searchString)
     {
 
-      ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+      ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Cpf" : "";
       ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
       ViewData["CurrentFilter"] = searchString;
 
@@ -40,22 +40,19 @@ namespace WebApplication4.Controllers
       }
       switch (sortOrder)
       {
-        case "name_desc":
+        case "Nome":
           clientes = clientes.OrderByDescending(s => s.Nome);
           break;
         case "Date":
           clientes = clientes.OrderBy(s => s.Data);
           break;
-        case "date_desc":
+        case "Cpf":
           clientes = clientes.OrderByDescending(s => s.Cpf);
           break;
         default:
           clientes = clientes.OrderBy(s => s.Nome);
           break;
       }
-
-      //Cliente = await clientes.ToListAsync();
-
 
       return View(await clientes.ToListAsync());
     }
@@ -95,8 +92,8 @@ namespace WebApplication4.Controllers
       formCorpo1t.AppendLine("                       <th class='column-title'>Parcela</th>");
       formCorpo1t.AppendLine("                       <th class='column-title'>Valor</th>");
       formCorpo1t.AppendLine("                       <th class='column-title'>Atualizado</th>");
+      formCorpo1t.AppendLine("                       <th class='column-title'>Desconto</th>");
       formCorpo1t.AppendLine("                       <th class='column-title'>Situacao</th>");
-      formCorpo1t.AppendLine("                       <th class='column-title'></th>");
       formCorpo1t.AppendLine("                       <th class='column-title'></th>");
       formCorpo1t.AppendLine("                     </tr>");
 
@@ -110,6 +107,7 @@ namespace WebApplication4.Controllers
       string id_Parcela = "";
       string id_Valor = "";
       string id_Situacao = "";
+      string id_Desconto = "";
 
       using (var contexto = new Contexto())
       {
@@ -127,7 +125,7 @@ namespace WebApplication4.Controllers
             id_Parcela = Select_dados3["Parcela"].ToString();
             id_Valor = Select_dados3["Valor"].ToString();
             id_Situacao = Select_dados3["Situacao"].ToString();
-
+            id_Desconto = Select_dados3["Desconto"].ToString();
 
             DateTime Data = Convert.ToDateTime(Select_dados3["Data"].ToString().Substring(0, 10));
             double Valor = double.Parse(Select_dados3["Valor"].ToString());
@@ -139,7 +137,6 @@ namespace WebApplication4.Controllers
             double Multa = 4.80;
             double Juros = 2.00;
             double Honorario = 10.00;
-
 
             double Jurus3 = Juros / 100;
             double Jurus4 = Jurus3 * dias;
@@ -160,8 +157,8 @@ namespace WebApplication4.Controllers
             formCorpo1t.AppendLine("          <td class=' '>" + id_Parcela + "</td>");
             formCorpo1t.AppendLine("          <td class=' '>" + string.Format("{0:N}", id_Valor, 11) + "</td>");
             formCorpo1t.AppendLine("          <td class=' '>" + string.Format("{0:N}", valor5, 11) + "</td>");
+            formCorpo1t.AppendLine("          <td class=' '>" + id_Desconto + "</td>");
             formCorpo1t.AppendLine("          <td class=' '>" + id_Situacao + "</td>");
-            formCorpo1t.AppendLine("          <td class=' '></td>");
 
             formCorpo1t.AppendLine("          <td><a href='../../Pagamento/Edit/?id=" + id_Pag + "' class='btn btn-primary btn-sm' >Alterar</a> |");
             formCorpo1t.AppendLine("          <a href='../../Pagamento/Delete/?id=" + id_Pag + "' class='btn btn-danger btn-sm' >Excluir</a></td>");

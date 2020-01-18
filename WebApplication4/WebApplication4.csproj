@@ -18,10 +18,10 @@
 
 
   <ItemGroup>
-    <Content Update="wwwroot\Rotativa\wkhtmltoimage.exe">
+    <Content Update="Grupo\wwwroot\Rotativa\wkhtmltoimage.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\Rotativa\wkhtmltopdf.exe">
+    <Content Update="Grupo\wwwroot\Rotativa\wkhtmltopdf.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -30,5 +30,8 @@
   <ItemGroup>
     <Folder Include="Views\WebForm\" />
   </ItemGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="http://json.schemastore.org/band-manifest" /></VisualStudio></ProjectExtensions>
 
 </Project>

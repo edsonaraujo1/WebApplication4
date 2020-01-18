@@ -84,8 +84,6 @@ namespace WebApplication4.Controllers
         }
       }    
 
-      //return await _context.Pagamento.ToListAsync();
-
       return new JsonResult(await _context.Pagamento.ToListAsync()) { SerializerSettings = new JsonSerializerSettings() { Formatting = Formatting.Indented } };
 
     }

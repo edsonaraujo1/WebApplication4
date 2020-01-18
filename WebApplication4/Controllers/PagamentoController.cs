@@ -1,6 +1,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -127,7 +128,7 @@ namespace WebApplication4.Controllers
   // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
   [HttpPost]
   [ValidateAntiForgeryToken]
-  public async Task<IActionResult> Create([Bind("IdPagto,IdCli,Cpf,Contrato,Parcela,Data,Valor,Situacao")] Pagamento pagamento)
+  public async Task<IActionResult> Create([Bind("IdPagto,IdCli,Cpf,Contrato,Parcela,Data,Valor,Desconto,Situacao")] Pagamento pagamento)
   {
     if (ModelState.IsValid)
     {
@@ -161,15 +162,15 @@ namespace WebApplication4.Controllers
   // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
   [HttpPost]
   [ValidateAntiForgeryToken]
-  public async Task<IActionResult> Edit(int id, [Bind("IdPagto,IdCli,Cpf,Contrato,Parcela,Data,Valor,Situacao")] Pagamento pagamento)
+  public async Task<IActionResult> Edit(int id, [Bind("IdPagto,IdCli,Cpf,Contrato,Parcela,Data,Valor,Desconto,Situacao")] Pagamento pagamento)
   {
     if (id != pagamento.IdPagto)
     {
       //return NotFound();
     }
 
-    if (ModelState.IsValid)
-    {
+      if (ModelState.IsValid)
+      {
       try
       {
         _context.Update(pagamento);
@@ -186,14 +187,16 @@ namespace WebApplication4.Controllers
           throw;
         }
       }
-      return RedirectToAction(nameof(Index));
-    }
+
+        return RedirectToAction(nameof(Index));
+      }
     ViewData["IdCli"] = new SelectList(_context.Cliente, "IdCli", "IdCli", pagamento.IdCli);
-    return View(pagamento);
+      //return RedirectToAction("Details/" + pagamento.IdCli + "", "Cliente");
+      return View(pagamento);
   }
 
-  // GET: Pagamento/Delete/5
-  public async Task<IActionResult> Delete(int? id)
+    // GET: Pagamento/Delete/5
+    public async Task<IActionResult> Delete(int? id)
   {
     if (id == null)
     {

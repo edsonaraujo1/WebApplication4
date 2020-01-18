@@ -5,6 +5,8 @@ $(function () {
     $('#Cpf').mask('000.000.000-00');
     $('#date').mask('00/00/0000');
     $('#dt_date').mask('00/00/0000');
+    $('#Data').mask('00/00/0000', { placeholder: "__/__/____" });
+    $('.Data').mask('00/00/0000', { placeholder: "__/__/____" });
     $('#dt_vencimento').mask('00/00/0000');
     $('#time').mask('00:00:00');
     $('#hora_enca').mask('00:00');
