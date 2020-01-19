@@ -8,10 +8,12 @@
 
 @if (Model.ShowRequestId)
 {
-  <p>
-    <strong>Request ID:</strong> <code>@Model.RequestId</code>
-  </p>
+<p>
+  <strong>Request ID:</strong> <code>@Model.RequestId</code>
+</p>
 }
+<h2 style="color:coral">@ViewBag.Error1</h2>
+<hr />
 
 <h3>Modo de Desenvolvimento</h3>
 <p>
@@ -23,3 +25,7 @@
   Para depuração local, ative o <strong>Desenvolvimento</strong> ambiente, definindo o <strong>ASPNETCORE_ENVIRONMENT</strong> variável de ambiente para <strong>Desenvolvimento</strong>
   e reiniciando o aplicativo.
 </p>
+<h4>Detalhes:</h4>
+<hr />
+<h5>@ViewBag.ErrorMenssage</h5>
+<h5>@ViewBag.RouteOfException</h5>

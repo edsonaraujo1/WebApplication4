@@ -308,24 +308,35 @@ namespace WebApplication4.Controllers
 
     public async Task<IActionResult> ClientesPDF()
     {
-      // Define la URL de la Cabecera 
-      string _headerUrl = Url.Action("ClienteHeaderPDF", "Cliente", null, "http");
-      // Define la URL del Pie de página
-      string _footerUrl = Url.Action("ClienteFooterPDF", "Cliente", null, "http");
 
-      return new ViewAsPdf("ClientesPDF", await _context.Cliente.ToListAsync())
+      try
       {
-        // Establece la Cabecera y el Pie de página
-        CustomSwitches = "--header-html " + _headerUrl + " --header-spacing 13 " +
-                         "--footer-html " + _footerUrl + " --footer-spacing 0",
-        PageMargins = new Margins(50, 10, 12, 10),
-        FileName = "Rel_Cliente.pdf",
-        PageSize = Size.A4,
-        MinimumFontSize = 19,
-        PageOrientation = Orientation.Portrait,
-        IsGrayScale = false
+        // Define la URL de la Cabecera 
+        string _headerUrl = Url.Action("ClienteHeaderPDF", "Cliente", null, "http");
+        // Define la URL del Pie de página
+        string _footerUrl = Url.Action("ClienteFooterPDF", "Cliente", null, "http");
 
-      };
+        return new ViewAsPdf("ClientesPDF", await _context.Cliente.ToListAsync())
+        {
+          // Establece la Cabecera y el Pie de página
+          CustomSwitches = "--header-html " + _headerUrl + " --header-spacing 13 " +
+                           "--footer-html " + _footerUrl + " --footer-spacing 0",
+          PageMargins = new Margins(50, 10, 12, 10),
+          FileName = "Rel_Cliente.pdf",
+          PageSize = Size.A4,
+          MinimumFontSize = 19,
+          PageOrientation = Orientation.Portrait,
+          IsGrayScale = false
+
+        };
+
+      }
+      catch (Exception ex)
+      {
+        ViewBag.Error1 = ex.Message.ToString();
+        return View();
+      }
+
     }
 
     public IActionResult ClienteHeaderPDF()
