@@ -17,9 +17,7 @@ Servidor IIS Versão 10 Host .Net Core 3.1.0<br>
 Versao .Net Core 3.0.100<br> 
 Infra Desktop Core i7 4.80Ghz 16Gb Ram SSD 480Gb<br> 
 <br> 
-<br>
-<br>
-Banco de Dados:<br><br> 
+<b>Banco de Dados:</b><br><br> 
 CREATE TABLE [dbo].[Cliente](<br>
 [IdCli] [int] IDENTITY(1,1) NOT NULL, <br>
 [Nome] [nvarchar](max) NULL,<br>
