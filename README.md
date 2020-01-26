@@ -1,6 +1,8 @@
 # WebApplication4
 Aplicativo Teste Técnico Grupo Aval
 
+<b> * * * Abrir projeto no  Visual studio 2019 * * * </b>
+
 Tecnologias Envolvidas para o Projeto:<br>
 Sistema Windows 10 Home Single Language<br> 
 SQL Server 2017 Communit Express<br> 
