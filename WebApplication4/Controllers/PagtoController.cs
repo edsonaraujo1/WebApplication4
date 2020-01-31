@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -22,6 +20,8 @@ namespace WebApplication4.Controllers
     {
       _context = context;
     }
+
+    private List<Pagamento> produto = new List<Pagamento>();
 
     // GET: api/Pagto
     [HttpGet]
@@ -90,9 +90,10 @@ namespace WebApplication4.Controllers
 
     // GET: api/Pagto/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<Pagamento>> GetPagamento(int id)
+    public async Task<ActionResult<Pagamento>> GetPagamento(int Id)
     {
-      var pagamento = await _context.Pagamento.FindAsync(id);
+      var pagamento = await _context.Pagamento.FindAsync(Id);
+      //var pagamento = await _context.Pagamento.Any(p => p.IdCli == Id);
 
       int id_Pag = 0;
       int id_Cli = 0;
@@ -101,11 +102,15 @@ namespace WebApplication4.Controllers
       string id_Parcela = "";
       string id_Valor = "";
       string id_Situacao = "";
+      string id_Data = "";
+      string id_Desconto = "";
+
+      List<Object> resultado = new List<Object>();
 
       using (var contexto = new Contexto())
       {
-        string strQuery_select3 = string.Format("SELECT * FROM Pagamento ORDER BY IdPagto ASC");
-        //string strQuery_select3 = string.Format("SELECT * FROM Pagamento WHERE IdPagto = {0}", id);
+        //string strQuery_select3 = string.Format("SELECT * FROM Pagamento ORDER BY IdPagto ASC");
+        string strQuery_select3 = string.Format("SELECT * FROM Pagamento WHERE IdCli = {0}", Id);
 
         using (SqlDataReader Select_dados3 = contexto.ExecutaComandoComRetorno(strQuery_select3))
         {
@@ -120,6 +125,8 @@ namespace WebApplication4.Controllers
             id_Parcela = Select_dados3["Parcela"].ToString();
             id_Valor = Select_dados3["Valor"].ToString();
             id_Situacao = Select_dados3["Situacao"].ToString();
+            id_Data = Select_dados3["Data"].ToString().Substring(0, 10);
+            id_Desconto = Select_dados3["Desconto"].ToString();
 
             DateTime Data = Convert.ToDateTime(Select_dados3["Data"].ToString().Substring(0, 10));
             double Valor = double.Parse(Select_dados3["Valor"].ToString());
@@ -146,6 +153,21 @@ namespace WebApplication4.Controllers
             string strQueryUpdat1 = "UPDATE Pagamento SET Total = '" + string.Format("{0:N}", valor5, 11) + "' WHERE IdPagto = " + id_Pag + "";
             contexto.ExecutaComando(strQueryUpdat1);
 
+            resultado.Add( new
+              {
+              IdPagto = id_Pag,
+              IdCli = id_Cli,
+              Cpf = id_Cpf,
+              Contrato = id_Contrato,
+              Parcela = id_Parcela,
+              id_Data = Data,
+              Valor = id_Valor,
+              Total = valor5,
+              Desconto = id_Desconto,
+              Situacao = id_Situacao,
+              Cliente = ""
+            });
+
           }
         }
       }
@@ -154,18 +176,19 @@ namespace WebApplication4.Controllers
         return NotFound();
       }
 
-      //return pagamento;
-
       return new JsonResult(pagamento) { SerializerSettings = new JsonSerializerSettings() { Formatting = Formatting.Indented } };
+      //return new JsonResult(resultado);
     }
 
     // PUT: api/Pagto/5
     [HttpPut("{id}")]
     public async Task<IActionResult> PutPagamento(int id, Pagamento pagamento)
     {
+      int index = produto.FindIndex(p => p.IdPagto == id);
+      pagamento.IdPagto = id;
       if (id != pagamento.IdPagto)
       {
-        return BadRequest();
+        //return BadRequest();
       }
 
       _context.Entry(pagamento).State = EntityState.Modified;
@@ -217,7 +240,7 @@ namespace WebApplication4.Controllers
 
     private bool PagamentoExists(int id)
     {
-      return _context.Pagamento.Any(e => e.IdPagto == id);
+      return _context.Pagamento.Any(e => e.IdCli == id);
     }
   }
 }
