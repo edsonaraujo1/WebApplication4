@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <PackageProjectUrl>http://www.utyum.somee.com/Grupo</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/edsonaraujo1/WebApplication4</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <Copyright>GrupoAval e Edson de Araujo</Copyright>
   </PropertyGroup>
 
 
