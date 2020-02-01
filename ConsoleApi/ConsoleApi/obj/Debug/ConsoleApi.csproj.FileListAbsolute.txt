@@ -1,0 +1,13 @@
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.exe.config
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.exe
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.pdb
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\System.Net.Http.Formatting.dll
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\Newtonsoft.Json.dll
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\System.Net.Http.Formatting.xml
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.csprojResolveAssemblyReference.cache
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.exe
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.pdb
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.exe.manifest
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.application
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.exe.manifest
+C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.application
