@@ -59,5 +59,6 @@ CONSTRAINT [PK_Pagamento] PRIMARY KEY CLUSTERED  (<br>
 <br> 
 <br>
 <br>
-
+Inclui o Projeto <b>ConsoleApi</b> com as funções GET/POST/PUT/DELETE em qualquer outro local.
+<br>
 <b>Link para Baixar Projeto: </b> https://github.com/edsonaraujo1/WebApplication4/archive/master.zip 
