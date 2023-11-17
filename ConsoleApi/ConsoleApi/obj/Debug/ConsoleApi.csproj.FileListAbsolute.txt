@@ -11,3 +11,14 @@ C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.exe.manifest
 C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.application
 C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.exe.manifest
 C:\Desenv5\ConsoleApi\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.application
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.exe.config
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.exe
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\ConsoleApi.pdb
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\System.Net.Http.Extensions.dll
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\System.Net.Http.Formatting.dll
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\System.Net.Http.Primitives.dll
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\bin\Debug\Newtonsoft.Json.dll
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.csproj.CoreCompileInputs.cache
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.csproj.CopyComplete
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.exe
+C:\Desenv\Repositorio\WebApplication4\ConsoleApi\ConsoleApi\obj\Debug\ConsoleApi.pdb
